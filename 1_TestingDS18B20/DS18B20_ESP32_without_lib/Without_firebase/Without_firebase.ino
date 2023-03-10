@@ -36,6 +36,8 @@ void loop(){
   Whole = Tc_100 / 100;
   Fract = Tc_100 % 100;
 
+  Serial.print(Tc_100);
+  Serial.print("\n");
 
   if (SignBit) // If negative
   {

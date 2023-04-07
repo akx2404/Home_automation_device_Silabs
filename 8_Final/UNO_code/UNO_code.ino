@@ -1,6 +1,5 @@
 #include <TimeLib.h>
 #include <Arduino.h>
-//tmElements_t tmSet;
 
 #include <SoftwareSerial.h>
 SoftwareSerial QuartzBT(10, 11); // RX | TX
@@ -15,7 +14,7 @@ TM1637Display display = TM1637Display(CLK, DIO);
 void setup() {
   Serial.begin(115200); 
   QuartzBT.begin(9600);
-  myRTC.setDS1302Time(00, 25, 16, 4, 06, 04, 2023); // seconds, minutes, hours, day of the week, day of the month, month, year
+  myRTC.setDS1302Time(00, 06, 15, 5, 07, 04, 2023); // seconds, minutes, hours, day of the week, day of the month, month, year
   display.setBrightness(5);
   display.clear();
 }

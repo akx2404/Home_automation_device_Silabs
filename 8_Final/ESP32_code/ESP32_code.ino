@@ -2,6 +2,8 @@
 #define RXp2 16
 #define TXp2 17
 
+float set_temp; //temperature that user wants to set
+
 void OneWireReset(int Pin);
 void OWwrite(int Pin, byte d);
 byte OWread(int Pin);
@@ -21,7 +23,7 @@ const char* WIFI_PASSWORD =  "air34689";
 #define API_KEY "AIzaSyBrZHcv7wRpuarsakB6TgMFGlQvKHbIDmg"
 #define DATABASE_URL "https://ds18b20-a074c-default-rtdb.firebaseio.com/"
 #define USER_EMAIL "akx2404@gmail.com"
-#define USER_PASSWORD "akxakx@giis"
+#define USER_PASSWORD ""
 
 FirebaseData fbdo;
 FirebaseAuth auth;
@@ -119,8 +121,13 @@ void loop(){
     
     //Firebase.setInt(fbdo, main, 5);
     Firebase.setFloat(fbdo, "/data/temp", temp);
-    Serial.println(temp);
 
+  }
+
+  if (Firebase.getString(fbdo, "data/set_temp")) {
+
+      String val = fbdo.stringData();
+      float set_temp = val.toFloat();
   }
   delay(1000);
 }

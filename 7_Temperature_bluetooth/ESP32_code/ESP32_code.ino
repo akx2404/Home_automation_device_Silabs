@@ -21,7 +21,7 @@ const char* WIFI_PASSWORD =  "air34689";
 #define API_KEY "AIzaSyBrZHcv7wRpuarsakB6TgMFGlQvKHbIDmg"
 #define DATABASE_URL "https://ds18b20-a074c-default-rtdb.firebaseio.com/"
 #define USER_EMAIL "akx2404@gmail.com"
-#define USER_PASSWORD "akxakx@giis"
+#define USER_PASSWORD ""
 
 FirebaseData fbdo;
 FirebaseAuth auth;
